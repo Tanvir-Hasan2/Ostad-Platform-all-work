@@ -36,24 +36,25 @@ class Module10AssPage extends StatelessWidget {
              height: 100,
            ),
            const SizedBox(height: 20),
-           ElevatedButton(
-             style: ButtonStyle(
-                 foregroundColor: WidgetStateProperty.all<Color>(Colors.black87),
-                 backgroundColor: WidgetStateProperty.all<Color>(Colors.green),
-                 shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-                     RoundedRectangleBorder(
-                         borderRadius: BorderRadius.circular(15),
-                     )
-                 )
-             ),
-             onPressed: () {
-               ScaffoldMessenger.of(context).showSnackBar(
-                 const SnackBar(
-                   content: Text('Button Pressed!'),
+           Container(
+             width: MediaQuery.of(context).size.width * 0.4,
+             child: ElevatedButton(
+               style: ElevatedButton.styleFrom(
+                 backgroundColor: Colors.green,
+                 shape: RoundedRectangleBorder(
+                   borderRadius: BorderRadius.circular(25),
                  ),
-               );
-             },
-             child: const Text('Press Me'),
+                 elevation: 15.0,
+               ),
+               onPressed: () {
+                 ScaffoldMessenger.of(context).showSnackBar(
+                   const SnackBar(
+                     content: Text('Button Pressed!'),
+                   ),
+                 );
+               },
+               child: const Text('Press Me'),
+             ),
            ),
          ],
        ),
